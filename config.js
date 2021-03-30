@@ -8,7 +8,7 @@ module.exports = {
   copyright: '© All rights reserved.',
   disqusShortname: 'https-youtingkun-github-io',
   postsPerPage: 4,
-  googleAnalyticsId: '',
+  googleAnalyticsId: 'G-WSSDZRM4WR',
   useKatex: false,
   menu: [
     {
@@ -26,7 +26,7 @@ module.exports = {
   ],
   author: {
     name: 'youtingkun',
-    photo: 'http://qiniu.youtingkun.com/image/avatar.jpg',
+    photo: 'https://qiniu.youtingkun.com/image/avatar.jpg',
     bio: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
     contacts: {
       email: '',

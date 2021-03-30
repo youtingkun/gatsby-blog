@@ -1,9 +1,9 @@
 ---
-title: Humane Typography in the Digital Age
+title: Humane Typography in the Digital Age1
 date: "2017-08-19T22:40:32.169Z"
 template: "post"
 draft: false
-slug: "humane-typography-in-the-digital-age"
+slug: "humane-typography-in-the-digital-age123"
 category: "Typography"
 tags:
   - "Design"

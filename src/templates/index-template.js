@@ -1,5 +1,5 @@
 // @flow strict
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
@@ -8,6 +8,8 @@ import Page from '../components/Page';
 import Pagination from '../components/Pagination';
 import { useSiteMetadata } from '../hooks';
 import type { PageContext, AllMarkdownRemark } from '../types';
+import drawLine from './js/draw-line';
+import './index-template.scss';
 
 type Props = {
   data: AllMarkdownRemark,
@@ -16,7 +18,11 @@ type Props = {
 
 const IndexTemplate = ({ data, pageContext }: Props) => {
   const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
-
+  const canvasRef = useRef();
+  useEffect(() => {
+    console.log(canvasRef.current);
+    drawLine(canvasRef.current);
+  });
   const {
     currentPage,
     hasNextPage,
@@ -29,6 +35,8 @@ const IndexTemplate = ({ data, pageContext }: Props) => {
   const pageTitle = currentPage > 0 ? `Posts - Page ${currentPage} - ${siteTitle}` : siteTitle;
 
   return (
+    <div>
+    <canvas id="canvas" ref={canvasRef} ></canvas>
     <Layout title={pageTitle} description={siteSubtitle}>
       <Sidebar isIndex />
       <Page>
@@ -41,6 +49,7 @@ const IndexTemplate = ({ data, pageContext }: Props) => {
         />
       </Page>
     </Layout>
+    </div>
   );
 };
 
