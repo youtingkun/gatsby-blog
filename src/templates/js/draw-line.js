@@ -1,8 +1,13 @@
 function drawLine(canvas) {
   const ctx = canvas.getContext('2d');
-  let cw = canvas.width = window.innerWidth;
+  // let cw = canvas.width = window.innerWidth;
+  let cw = document.body.clientWidth;
+  canvas.width = cw;
+
   let cx = cw / 2;
-  let ch = canvas.height = 1024;
+  // let ch = canvas.height = 1024;
+  let ch = Math.max(window.innerHeight, document.body.scrollHeight);
+  canvas.height = ch;
   let cy = ch / 2;
 
   ctx.fillStyle = '#000';
@@ -104,9 +109,11 @@ function drawLine(canvas) {
       requestId = null;
     }
 
-    cw = canvas.width = window.innerWidth,
+    cw = document.body.clientWidth;
+    canvas.width = cw;
     cx = cw / 2;
-    ch = canvas.height = window.innerHeight,
+    ch = Math.max(window.innerHeight, document.body.scrollHeight);
+    canvas.height = ch;
     cy = ch / 2;
 
     Draw();

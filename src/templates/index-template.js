@@ -72,6 +72,10 @@ export const query = graphql`
             date
             category
             description
+            socialImage {
+              relativePath
+            }
+
           }
         }
       }
